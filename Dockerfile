@@ -28,3 +28,9 @@ RUN composer install --no-dev --optimize-autoloader \
     && php artisan route:cache
 
 EXPOSE 80
+
+RUN php artisan --version \
+    && php artisan config:clear \
+    && php artisan route:clear \
+    && ls -la \
+    && ls -la vendor
